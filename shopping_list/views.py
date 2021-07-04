@@ -1,5 +1,8 @@
 from django.http import HttpResponse
 
+from . import models
+
 
 def index(request):
-    return HttpResponse("Hello world!")
+    shopping_list = models.Item.objects.all()
+    return HttpResponse(shopping_list)

@@ -12,8 +12,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 
-from decouple import config
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -21,12 +19,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
-# SECURITY WARNING: don't run with debug turned on in production!
+SECRET_KEY = "foo"
 DEBUG = True
 
-ALLOWED_HOSTS = ["0.0.0.0"]
+ALLOWED_HOSTS = ["0.0.0.0", "127.0.0.1"]
 
-SECRET_KEY = config("SECRET_KEY")
 
 # Application definition
 
@@ -50,7 +47,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = "larder.urls"
+ROOT_URLCONF = "larder-project.urls"
 
 TEMPLATES = [
     {
@@ -68,7 +65,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "larder.wsgi.application"
+WSGI_APPLICATION = "larder-project.wsgi.application"
 
 
 # Database
