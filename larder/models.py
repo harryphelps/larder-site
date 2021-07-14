@@ -7,21 +7,10 @@ class Item(models.Model):
     """
 
     name = models.CharField(unique=True, max_length=30)
+    last_purchased_on = models.DateField(auto_now=True)
+    last_used_on = models.DateField(blank=True, null=True)
+    average_shelf_life = models.IntegerField(blank=True, null=True)
+    total_in_stock = models.IntegerField(default=0)
 
-
-class Larder(models.Model):
-    """
-    A list of items with quanitites in stock in the larder.
-    """
-
-    item = models.ForeignKey(Item, on_delete=models.CASCADE)
-    total_in_stock = models.IntegerField()
-
-
-class User(models.Model):
-    """
-    A user of the larder service
-    """
-
-    user_name = models.CharField(max_length=30)
-    larder_id = models.ForeignKey(Larder, on_delete=models.CASCADE)
+    def __str__(self):
+        return f"{self.name} - {self.total_in_stock} in stock"
