@@ -4,6 +4,7 @@ attrs==21.2.0
 black==21.6b0
 click==8.0.1
 Django==3.0.12
+django-cors-headers==3.7.0
 djangorestframework==3.12.4
 flake8==3.9.2
 iniconfig==1.1.1
