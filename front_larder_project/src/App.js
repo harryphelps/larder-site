@@ -1,5 +1,4 @@
 import ItemList from './larder/item_list' 
-import logo from './logo.svg';
 import './App.css';
 
 function App() {

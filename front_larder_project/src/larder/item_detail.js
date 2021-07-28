@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 
 class ItemDetail extends Component {
 	render(){
-	const p = this.props.p
+	const obj = this.props.itemDetail
 		return(
-			<div>
-				<h4>{p.id}. {p.name} - {p.total_in_stock} in stock</h4>
+			<div style={{ color: "yellow", border: "1px solid yellow"}}>
+				<h4>{obj.id}. {obj.name} - {obj.total_in_stock} in stock</h4>
 			</div>
 		)
 	}
