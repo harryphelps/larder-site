@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { Component } from 'react';
 import ItemDetail from './item_detail';
+import ItemForm from './itemform';
 
 class ItemList extends Component {
 	
@@ -52,6 +53,7 @@ class ItemList extends Component {
 			{this.state.showComponent ? (
 				<ItemDetail itemDetail={this.state.item} /> 
 			) : null}
+			<ItemForm/>
 			</div>
 			);
 		}
